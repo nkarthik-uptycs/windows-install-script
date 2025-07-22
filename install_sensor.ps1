@@ -109,7 +109,7 @@ try {
             Write-Warning "Installation completed but requires restart (exit code 3010)"
         }
         default {
-            Write-Error "Installation failed with exit code: $LASTEXITCODE"
+            Write-Error "Installation failed with exit code: $exitCode"
         }
     }
 
@@ -124,7 +124,7 @@ try {
     #    }
     #}
 
-    return $LASTEXITCODE
+    return $exitCode
 }
 catch {
     Write-Error "An unexpected error occurred: $($_.Exception.Message)"
